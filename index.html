@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RoftCore | El Núcleo de la Innovación Tecnológica</title>
+    <title>RoftCore | The Core of Technological Innovation</title>
     <link rel="icon" type="image/png" href="favicon/RoftCore.png">
     <link rel="apple-touch-icon" href="favicon/RoftCore.png">
     <link rel="stylesheet" href="style.css">
@@ -13,6 +13,8 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
+
+    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="container">
             <div class="logo">
@@ -20,48 +22,50 @@
                 <span class="logo-text"><span class="logo-accent">Roft</span>Core</span>
             </div>
             <ul class="nav-links">
-                <li><a href="#about">Sobre nosotros</a></li>
-                <li><a href="#projects">Proyectos</a></li>
-                <li><a href="#philosophy">Filosofía</a></li>
-                <li><a href="#contact" class="btn btn-outline">Contacto</a></li>
+                <li><a href="#about" data-i18n="nav_about">About us</a></li>
+                <li><a href="#projects" data-i18n="nav_projects">Projects</a></li>
+                <li><a href="#philosophy" data-i18n="nav_philosophy">Philosophy</a></li>
+                <li><a href="#contact" class="btn btn-outline" data-i18n="nav_contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <header class="hero">
         <div class="hero-background"></div>
         <div class="container">
             <div class="hero-content">
-                <div class="badge">Innovación en el presente</div>
-                <h1>Forjando el <span class="text-gradient">Futuro Digital</span> desde el Núcleo</h1>
-                <p>RoftCore es una entidad dedicada a la agrupación y desarrollo de soluciones tecnológicas disruptivas. Diseñamos herramientas prácticas que escalan desde ideas experimentales hasta productos de mercado.</p>
+                <div class="badge" data-i18n="hero_badge">Innovation in the present</div>
+                <h1 data-i18n="hero_title">Forging the <span class="text-gradient">Digital Future</span> from the Core</h1>
+                <p data-i18n="hero_desc">RoftCore is an entity dedicated to the grouping and development of disruptive technological solutions. We design practical tools that scale from experimental ideas to market products.</p>
                 <div class="hero-actions">
-                    <a href="#projects" class="btn btn-primary">Explorar Proyectos</a>
-                    <a href="#about" class="btn btn-ghost">Saber más <i data-lucide="arrow-right"></i></a>
+                    <a href="#projects" class="btn btn-primary" data-i18n="hero_btn_explore">Explore Projects</a>
+                    <a href="#about" class="btn btn-ghost" data-i18n="hero_btn_more">Learn more <i data-lucide="arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </header>
 
+    <!-- About Section -->
     <section id="about" class="section about">
         <div class="container">
             <div class="section-grid">
                 <div class="section-text">
-                    <h2 class="section-title">Más que una Entidad,<br>un <span class="text-gradient">Laboratorio de Ideas</span></h2>
-                    <p>RoftCore nace como un espacio flexible para la creación sin las limitaciones de las estructuras tradicionales. Nuestro enfoque es el anonimato estratégico y la ejecución técnica impecable.</p>
+                    <h2 class="section-title" data-i18n="about_title">More than an Entity,<br>an <span class="text-gradient">Idea Lab</span></h2>
+                    <p data-i18n="about_desc">RoftCore was born as a flexible space for creation without the limitations of traditional structures. Our focus is problem solving and impeccable technical execution.</p>
                     <div class="features">
                         <div class="feature-item">
                             <div class="feature-icon"><i data-lucide="shield"></i></div>
                             <div>
-                                <h3>Anonimato Estratégico</h3>
-                                <p>Protegemos la identidad para enfocarnos exclusivamente en la calidad del código y la utilidad del producto.</p>
+                                <h3 data-i18n="about_feature1_title">Strategic problems</h3>
+                                <p data-i18n="about_feature1_desc">We focus exclusively in solving real-world problems, providing user-friendly innovative solutions.</p>
                             </div>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon"><i data-lucide="zap"></i></div>
                             <div>
-                                <h3>Agilidad Técnica</h3>
-                                <p>Ciclos de desarrollo rápidos, desde prototipos hasta software de alto rendimiento.</p>
+                                <h3 data-i18n="about_feature2_title">Technical Agility</h3>
+                                <p data-i18n="about_feature2_desc">Fast development cycles, from prototypes to high-performance software.</p>
                             </div>
                         </div>
                     </div>
@@ -86,51 +90,53 @@
         </div>
     </section>
 
+    <!-- Ecosystem Section -->
     <section id="ecosystem" class="section bg-darker">
         <div class="container text-center">
-            <h2 class="section-title">Lo que Construimos</h2>
-            <p class="section-subtitle">Abarcamos todo el espectro del desarrollo tecnológico moderno.</p>
+            <h2 class="section-title" data-i18n="ecosystem_title">What We Build</h2>
+            <p class="section-subtitle" data-i18n="ecosystem_subtitle">We cover the entire spectrum of modern technological development.</p>
             <div class="grid grid-4">
                 <div class="card">
                     <i data-lucide="beaker"></i>
-                    <h3>Proyectos Experimentales</h3>
-                    <p>Investigación y desarrollo de nuevas tecnologías y paradigmas.</p>
+                    <h3 data-i18n="ecosystem_card1_title">Experimental Projects</h3>
+                    <p data-i18n="ecosystem_card1_desc">Research and development of new technologies and paradigms.</p>
                 </div>
                 <div class="card">
                     <i data-lucide="layout"></i>
-                    <h3>Web Apps Prácticas</h3>
-                    <p>Herramientas diseñadas para resolver problemas cotidianos con elegancia.</p>
+                    <h3 data-i18n="ecosystem_card2_title">Practical Web Apps</h3>
+                    <p data-i18n="ecosystem_card2_desc">Tools designed to solve everyday problems with elegance.</p>
                 </div>
                 <div class="card">
                     <i data-lucide="code-2"></i>
-                    <h3>Software Avanzado</h3>
-                    <p>Aplicaciones robustas con arquitectura escalable y alto rendimiento.</p>
+                    <h3 data-i18n="ecosystem_card3_title">Advanced Software</h3>
+                    <p data-i18n="ecosystem_card3_desc">Robust applications with architecture scalable and high performance.</p>
                 </div>
                 <div class="card">
                     <i data-lucide="git-branch"></i>
-                    <h3>Open Source</h3>
-                    <p>Contribuciones al ecosistema global para fomentar el crecimiento compartido.</p>
+                    <h3 data-i18n="ecosystem_card4_title">Open Source</h3>
+                    <p data-i18n="ecosystem_card4_desc">Contributions to the global ecosystem to foster shared growth.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Featured Projects Section -->
     <section id="projects" class="section">
         <div class="container">
             <div class="nebwork-spotlight">
                 <div class="nebwork-info">
-                    <div class="badge-purple">Proyecto Principal</div>
+                    <div class="badge-purple" data-i18n="nebwork_badge">Main Project</div>
                     <h2 class="nebwork-title">NebWork</h2>
-                    <p class="nebwork-desc">La plataforma colaborativa definitiva. NebWork no es solo una herramienta, es un ecosistema diseñado para centralizar el flujo de trabajo, desde la concepción de una idea hasta su despliegue final.</p>
+                    <p class="nebwork-desc" data-i18n="nebwork_desc">The ultimate collaborative platform. NebWork is not just a tool, it is an ecosystem designed to centralize workflow, from the conception of an idea to its final deployment.</p>
                     <ul class="nebwork-features">
-                        <li><i data-lucide="check-circle-2"></i> Gestión de Ideas & Roadmap</li>
-                        <li><i data-lucide="book-open"></i> Wiki y Documentación integrada</li>
-                        <li><i data-lucide="trello"></i> Sistema de Tareas Kanban</li>
-                        <li><i data-lucide="github"></i> Integración con GitHub</li>
-                        <li><i data-lucide="hard-drive"></i> Almacenamiento tipo Drive</li>
-                        <li><i data-lucide="message-square"></i> Mensajería y Notificaciones</li>
+                        <li data-i18n="nebwork_f1"><i data-lucide="check-circle-2"></i> Idea Management & Roadmap</li>
+                        <li data-i18n="nebwork_f2"><i data-lucide="book-open"></i> Integrated Wiki and Documentation</li>
+                        <li data-i18n="nebwork_f3"><i data-lucide="trello"></i> Kanban Task System</li>
+                        <li data-i18n="nebwork_f4"><i data-lucide="github"></i> GitHub Integration</li>
+                        <li data-i18n="nebwork_f5"><i data-lucide="hard-drive"></i> Drive-like Storage</li>
+                        <li data-i18n="nebwork_f6"><i data-lucide="message-square"></i> Messaging and Notifications</li>
                     </ul>
-                    <a href="#" class="btn btn-primary">Ver Documentación</a>
+                    <a href="#" class="btn btn-primary" data-i18n="nebwork_btn">View Documentation</a>
                 </div>
                 <div class="nebwork-preview">
                     <div class="nebwork-ui-mockup">
@@ -150,26 +156,28 @@
         </div>
     </section>
 
+    <!-- Philosophy Section -->
     <section id="philosophy" class="section bg-darker">
         <div class="container">
-            <h2 class="section-title text-center">Nuestra Filosofía</h2>
+            <h2 class="section-title text-center" data-i18n="philosophy_title">Our Philosophy</h2>
             <div class="grid grid-3">
                 <div class="philosophy-card">
-                    <h3>Innovación Práctica</h3>
-                    <p>No creamos tecnología por el simple hecho de hacerlo. Cada línea de código debe aportar un valor tangible al usuario final.</p>
+                    <h3 data-i18n="philosophy_card1_title">Practical Innovation</h3>
+                    <p data-i18n="philosophy_card1_desc">We don't create technology for its own sake. Every line of code must provide tangible value to the end user.</p>
                 </div>
                 <div class="philosophy-card">
-                    <h3>Iteración Constante</h3>
-                    <p>Creemos en el ciclo de construir, medir y aprender. Nuestros proyectos están en evolución perpetua.</p>
+                    <h3 data-i18n="philosophy_card2_title">Constant Iteration</h3>
+                    <p data-i18n="philosophy_card2_desc">We believe in the build, measure, and learn cycle. Our projects are in perpetual evolution.</p>
                 </div>
                 <div class="philosophy-card">
-                    <h3>Construcción Real</h3>
-                    <p>Menos promesas, más productos. En RoftCore, las ideas no son nada sin una ejecución sólida detrás.</p>
+                    <h3 data-i18n="philosophy_card3_title">Real Construction</h3>
+                    <p data-i18n="philosophy_card3_desc">Less promises, more products. At RoftCore, ideas are nothing without solid execution behind them.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -178,30 +186,33 @@
                         <img src="favicon/RoftCore.png" alt="RoftCore Logo" class="logo-img">
                         <span class="logo-text"><span class="logo-accent">Roft</span>Core</span>
                     </div>
-                    <p>Construyendo el futuro digital de forma anónima y eficiente.</p>
+                    <p data-i18n="footer_brand">Building the digital future efficiently.</p>
                 </div>
                 <div class="footer-links">
-                    <h4>Ecosistema</h4>
+                    <h4 data-i18n="footer_eco">Ecosystem</h4>
                     <ul>
                         <li><a href="#">NebWork</a></li>
-                        <li><a href="#">Open Source</a></li>
+                        <li><a href="#" data-i18n="ecosystem_card4_title">Open Source</a></li>
                         <li><a href="#">Labs</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4>Legal</h4>
+                    <h4 data-i18n="footer_legal">Legal</h4>
                     <ul>
-                        <li><a href="#">Privacidad</a></li>
-                        <li><a href="#">Términos</a></li>
+                        <li><a href="#" data-i18n="footer_privacy">Privacy</a></li>
+                        <li><a href="#" data-i18n="footer_terms">Terms</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 RoftCore. Todos los derechos reservados.</p>
+                <p data-i18n="footer_rights">&copy; 2026 RoftCore. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Core Scripts -->
+    <script src="main.js" type="module"></script>
     <script src="script.js"></script>
+
 </body>
 </html>

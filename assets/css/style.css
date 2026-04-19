@@ -164,6 +164,36 @@ ul {
     gap: 2rem;
 }
 
+.lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.lang-link {
+    color: var(--text-secondary);
+    transition: var(--transition);
+}
+
+.lang-link:hover {
+    color: var(--text-primary);
+}
+
+.lang-link.active {
+    color: var(--accent-color);
+}
+
+.lang-switcher .divider {
+    color: rgba(255, 255, 255, 0.2);
+}
+
 .nav-links a {
     color: var(--text-secondary);
     font-size: 0.95rem;

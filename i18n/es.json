@@ -1,6 +1,7 @@
 {
-    "welcome": "¡Bienvenido a nuestra aplicación!",
-    "login": "Iniciar sesión",
+  "seo_title": "RoftCore | Forjando el Futuro Digital",
+  "seo_desc": "RoftCore es un laboratorio tecnológico enfocado en soluciones digitales disruptivas y desarrollo de software escalable.",
+  "welcome": "¡Bienvenido a nuestra aplicación!",    "login": "Iniciar sesión",
     "nav_about": "Sobre nosotros",
     "nav_projects": "Proyectos",
     "nav_philosophy": "Filosofía",

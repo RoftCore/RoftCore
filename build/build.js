@@ -6,12 +6,9 @@ const distDir = path.join(rootDir, 'dist');
 const i18nDir = path.join(rootDir, 'i18n');
 const assetsDir = path.join(rootDir, 'assets');
 const templatePath = path.join(__dirname, 'template.html');
-const rootIndexBtn = path.join(rootDir, 'index.html');
 
-// Helper para copiado recursivo (compatible con versiones antiguas de Node)
 function copyFolderRecursiveSync(source, target) {
     if (!fs.existsSync(target)) fs.mkdirSync(target, { recursive: true });
-    
     const files = fs.readdirSync(source);
     files.forEach(file => {
         const curSource = path.join(source, file);
@@ -24,63 +21,55 @@ function copyFolderRecursiveSync(source, target) {
     });
 }
 
-// 1. Limpiar y preparar carpeta dist
-console.log('🚀 Iniciando build de producción...');
-if (fs.existsSync(distDir)) {
-    fs.rmSync(distDir, { recursive: true, force: true });
-}
+console.log('🚀 Iniciando build SEO-Friendly...');
+
+if (fs.existsSync(distDir)) fs.rmSync(distDir, { recursive: true, force: true });
 fs.mkdirSync(distDir);
 
-// 2. Copiar assets a dist
-console.log('📦 Copiando assets...');
-if (fs.existsSync(assetsDir)) {
-    copyFolderRecursiveSync(assetsDir, path.join(distDir, 'assets'));
-}
+if (fs.existsSync(assetsDir)) copyFolderRecursiveSync(assetsDir, path.join(distDir, 'assets'));
 
-// 3. Copiar index.html raíz (selector)
-console.log('🎛️ Preparando selector de idioma...');
-if (fs.existsSync(rootIndexBtn)) {
-    fs.copyFileSync(rootIndexBtn, path.join(distDir, 'index.html'));
-}
-
-// 4. Copiar CNAME si existe
 const cnamePath = path.join(rootDir, 'CNAME');
-if (fs.existsSync(cnamePath)) {
-    fs.copyFileSync(cnamePath, path.join(distDir, 'CNAME'));
-}
+if (fs.existsSync(cnamePath)) fs.copyFileSync(cnamePath, path.join(distDir, 'CNAME'));
 
-// 5. Generar versiones localizadas
-console.log('🌍 Generando versiones por idioma...');
 const template = fs.readFileSync(templatePath, 'utf8');
 const languages = ['en', 'es'];
 
 languages.forEach(lang => {
     const jsonPath = path.join(i18nDir, `${lang}.json`);
     const langOutputDir = path.join(distDir, lang);
-    const outputPath = path.join(langOutputDir, 'index.html');
+    const translations = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+    
+    let output = template;
+    
+    // 1. Manejo de URLs Canónicas ANTES de inyectar el idioma en el resto
+    const baseUrl = "https://roftcore.work";
+    const canonical = lang === 'en' ? `${baseUrl}/` : `${baseUrl}/${lang}/`;
+    
+    // Reemplazamos la URL base con la específica del idioma en el template
+    // Buscamos específicamente las etiquetas que tienen {{lang}} en la URL
+    output = output.replace(/https:\/\/roftcore.work\/{{lang}}\//g, canonical);
 
-    if (!fs.existsSync(langOutputDir)) {
-        fs.mkdirSync(langOutputDir, { recursive: true });
-    }
+    // 2. Reemplazos de idioma y estado activo
+    output = output.replace(/{{lang}}/g, lang);
+    output = output.replace(/{{lang-en-active}}/g, lang === 'en' ? 'active' : '');
+    output = output.replace(/{{lang-es-active}}/g, lang === 'es' ? 'active' : '');
 
-    if (fs.existsSync(jsonPath)) {
-        const translations = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
-        let output = template;
+    // 3. Reemplazar llaves de traducción
+    Object.keys(translations).forEach(key => {
+        const regex = new RegExp(`{{${key}}}`, 'g');
+        output = output.replace(regex, translations[key]);
+    });
 
-        // Reemplazar lang
-        output = output.replace(/{{lang}}/g, lang);
+    // Guardar versión en subdirectorio /en/ o /es/
+    if (!fs.existsSync(langOutputDir)) fs.mkdirSync(langOutputDir, { recursive: true });
+    fs.writeFileSync(path.join(langOutputDir, 'index.html'), output);
+    console.log(` ✅ Generado: /${lang}/index.html`);
 
-        // Reemplazar llaves de traducción
-        Object.keys(translations).forEach(key => {
-            const regex = new RegExp(`{{${key}}}`, 'g');
-            output = output.replace(regex, translations[key]);
-        });
-
-        fs.writeFileSync(outputPath, output);
-        console.log(` ✅ Generado: /${lang}/index.html`);
-    } else {
-        console.warn(` ⚠️ No se encontró traducción para: ${lang}`);
+    // Si es inglés, también es la Home Principal en la raíz
+    if (lang === 'en') {
+        fs.writeFileSync(path.join(distDir, 'index.html'), output);
+        console.log(` 🏠 Generado Home Principal: /index.html (English)`);
     }
 });
 
-console.log('\n✨ Build completada con éxito en la carpeta /dist/');
+console.log('\n✨ Build completa. Estructura SEO perfecta lista en /dist/');

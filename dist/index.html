@@ -3,109 +3,244 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RoftCore | Select Language</title>
-    <link rel="icon" type="image/png" href="assets/img/RoftCore.png">
-    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- SEO Primary -->
+    <title>RoftCore | Forge the Digital Future</title>
+    <meta name="description" content="RoftCore is a technology lab focused on disruptive digital solutions and scalable software development.">
+    <link rel="canonical" href="https://roftcore.work/">
+    
+    <!-- Language Alternates -->
+    <link rel="alternate" hreflang="x-default" href="https://roftcore.work/">
+    <link rel="alternate" hreflang="en" href="https://roftcore.work/en/">
+    <link rel="alternate" hreflang="es" href="https://roftcore.work/es/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://roftcore.work/">
+    <meta property="og:title" content="RoftCore | Forge the Digital Future">
+    <meta property="og:description" content="RoftCore is a technology lab focused on disruptive digital solutions and scalable software development.">
+    <meta property="og:image" content="https://roftcore.work/assets/img/RoftCore.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="RoftCore | Forge the Digital Future">
+    <meta name="twitter:description" content="RoftCore is a technology lab focused on disruptive digital solutions and scalable software development.">
+    <meta name="twitter:image" content="https://roftcore.work/assets/img/RoftCore.png">
+
+    <!-- Assets -->
+    <link rel="icon" type="image/png" href="../assets/img/RoftCore.png">
+    <link rel="apple-touch-icon" href="../assets/img/RoftCore.png">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            overflow: hidden;
-            background: radial-gradient(circle at center, #121212 0%, #0a0a0a 100%);
-        }
-        .selector-container {
-            text-align: center;
-            animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-            padding: 2rem;
-            z-index: 10;
-        }
-        .logo-large {
-            width: 80px;
-            height: auto;
-            margin-bottom: 2rem;
-            filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.3));
-        }
-        .welcome-text {
-            margin-bottom: 2.5rem;
-        }
-        .welcome-text h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-        .welcome-text p {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-        }
-        .lang-options {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-        }
-        .lang-btn {
-            min-width: 160px;
-            justify-content: center;
-        }
-        .background-glow {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100vw;
-            height: 100vh;
-            background: radial-gradient(circle at center, rgba(139, 92, 246, 0.08) 0%, transparent 70%);
-            z-index: 1;
-            pointer-events: none;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @media (max-width: 480px) {
-            .lang-options {
-                flex-direction: column;
-                align-items: center;
-            }
-            .lang-btn {
-                width: 100%;
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-    <div class="background-glow"></div>
-    <div class="selector-container">
-        <img src="assets/img/RoftCore.png" alt="RoftCore Logo" class="logo-large">
-        <div class="welcome-text">
-            <h1>Welcome to <span class="text-gradient">RoftCore</span></h1>
-            <p>Select your preferred language</p>
-        </div>
-        <div class="lang-options">
-            <a href="en/" class="btn btn-primary lang-btn">English</a>
-            <a href="es/" class="btn btn-outline lang-btn">Español</a>
-        </div>
-    </div>
 
-    <script>
-        (function() {
-            const hasChosen = sessionStorage.getItem('lang_chosen');
-            if (!hasChosen) {
-                const userLang = navigator.language || navigator.userLanguage;
-                const target = userLang.startsWith('es') ? 'es/' : 'en/';
-                window.location.href = target;
-            }
-        })();
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="../assets/img/RoftCore.png" alt="RoftCore Logo" class="logo-img">
+                <span class="logo-text"><span class="logo-accent">Roft</span>Core</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">About us</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#philosophy">Philosophy</a></li>
+                <li class="lang-switcher">
+                    <a href="/" class="lang-link active">EN</a>
+                    <span class="divider">|</span>
+                    <a href="/es/" class="lang-link ">ES</a>
+                </li>
+                <li><a href="#contact" class="btn btn-outline">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                sessionStorage.setItem('lang_chosen', 'true');
-            });
-        });
-    </script>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-background"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="badge">Current innovation</div>
+                <h1>Forging the <span class='text-gradient'>Digital Future</span> from the Core</h1>
+                <p>RoftCore is an entity dedicated to the grouping and development of disruptive technological solutions. We design practical tools that scale from experimental ideas to market products.</p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">Explore Projects</a>
+                    <a href="#about" class="btn btn-ghost">Learn more <i data-lucide='arrow-right'></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="section-grid">
+                <div class="section-text">
+                    <h2 class="section-title">More than an Entity,<br>an <span class='text-gradient'>Idea Lab</span></h2>
+                    <p>RoftCore was born as a flexible space for creation without the limitations of traditional structures. Our focus is strategic problems and impeccable technical execution.</p>
+                    <div class="features">
+                        <div class="feature-item">
+                            <div class="feature-icon"><i data-lucide="shield"></i></div>
+                            <div>
+                                <h3>Strategic problems</h3>
+                                <p>We protect identity to focus exclusively on code quality and product utility.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i data-lucide="zap"></i></div>
+                            <div>
+                                <h3>Technical Agility</h3>
+                                <p>Fast development cycles, from prototypes to high-performance software.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-visual">
+                    <div class="visual-card">
+                        <div class="visual-header">
+                            <div class="dot red"></div>
+                            <div class="dot yellow"></div>
+                            <div class="dot green"></div>
+                        </div>
+                        <div class="visual-body">
+                            <pre><code><span class="code-keyword">const</span> <span class="code-variable">RoftCore</span> = {
+  <span class="code-property">focus</span>: <span class="code-string">"Innovation"</span>,
+  <span class="code-property">state</span>: <span class="code-string">"Building"</span>,
+  <span class="code-property">projects</span>: [<span class="code-string">"NebWork"</span>, <span class="code-string">"NextGen"</span>]
+};</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ecosystem Section -->
+    <section id="ecosystem" class="section bg-darker">
+        <div class="container text-center">
+            <h2 class="section-title">What We Build</h2>
+            <p class="section-subtitle">We cover the entire spectrum of modern technological development.</p>
+            <div class="grid grid-4">
+                <div class="card">
+                    <i data-lucide="beaker"></i>
+                    <h3>Experimental Projects</h3>
+                    <p>Research and development of new technologies and paradigms.</p>
+                </div>
+                <div class="card">
+                    <i data-lucide="layout"></i>
+                    <h3>Practical Web Apps</h3>
+                    <p>Tools designed to solve everyday problems with elegance.</p>
+                </div>
+                <div class="card">
+                    <i data-lucide="code-2"></i>
+                    <h3>Advanced Software</h3>
+                    <p>Robust applications with architecture scalable and high performance.</p>
+                </div>
+                <div class="card">
+                    <i data-lucide="git-branch"></i>
+                    <h3>Open Source</h3>
+                    <p>Contributions to the global ecosystem to foster shared growth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="nebwork-spotlight">
+                <div class="nebwork-info">
+                    <div class="badge-purple">Main Project</div>
+                    <h2 class="nebwork-title">NebWork</h2>
+                    <p class="nebwork-desc">The ultimate collaborative platform. NebWork is not just a tool, it is an ecosystem designed to centralize workflow, from the conception of an idea to its final deployment.</p>
+                    <ul class="nebwork-features">
+                        <li><i data-lucide='check-circle-2'></i> Idea Management & Roadmap</li>
+                        <li><i data-lucide='book-open'></i> Integrated Wiki and Documentation</li>
+                        <li><i data-lucide='trello'></i> Kanban Task System</li>
+                        <li><i data-lucide='github'></i> GitHub Integration</li>
+                        <li><i data-lucide='hard-drive'></i> Drive-like Storage</li>
+                        <li><i data-lucide='message-square'></i> Messaging and Notifications</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">View Documentation</a>
+                </div>
+                <div class="nebwork-preview">
+                    <div class="nebwork-ui-mockup">
+                        <div class="ui-sidebar"></div>
+                        <div class="ui-main">
+                            <div class="ui-header"></div>
+                            <div class="ui-content">
+                                <div class="ui-task"></div>
+                                <div class="ui-task"></div>
+                                <div class="ui-task"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section id="philosophy" class="section bg-darker">
+        <div class="container">
+            <h2 class="section-title text-center">Our Philosophy</h2>
+            <div class="grid grid-3">
+                <div class="philosophy-card">
+                    <h3>Practical Innovation</h3>
+                    <p>We don't create technology for its own sake. Every line of code must provide tangible value to the end user.</p>
+                </div>
+                <div class="philosophy-card">
+                    <h3>Constant Iteration</h3>
+                    <p>We believe in the build, measure, and learn cycle. Our projects are in perpetual evolution.</p>
+                </div>
+                <div class="philosophy-card">
+                    <h3>Real Construction</h3>
+                    <p>Less promises, more products. At RoftCore, ideas are nothing without solid execution behind them.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="../assets/img/RoftCore.png" alt="RoftCore Logo" class="logo-img">
+                        <span class="logo-text"><span class="logo-accent">Roft</span>Core</span>
+                    </div>
+                    <p>Building the digital future efficiently.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Ecosystem</h4>
+                    <ul>
+                        <li><a href="#">NebWork</a></li>
+                        <li><a href="#">Open Source</a></li>
+                        <li><a href="#">Labs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 RoftCore. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Core Scripts -->
+    <script src="../assets/js/main.js" type="module"></script>
+    <script src="../assets/js/script.js"></script>
+
 </body>
 </html>

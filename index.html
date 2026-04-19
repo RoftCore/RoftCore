@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoftCore | Select Language</title>
+    <link rel="icon" type="image/png" href="assets/img/RoftCore.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            background: radial-gradient(circle at center, #121212 0%, #0a0a0a 100%);
+        }
+        .selector-container {
+            text-align: center;
+            animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 2rem;
+            z-index: 10;
+        }
+        .logo-large {
+            width: 80px;
+            height: auto;
+            margin-bottom: 2rem;
+            filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.3));
+        }
+        .welcome-text {
+            margin-bottom: 2.5rem;
+        }
+        .welcome-text h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .welcome-text p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+        .lang-options {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+        .lang-btn {
+            min-width: 160px;
+            justify-content: center;
+        }
+        .background-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100vw;
+            height: 100vh;
+            background: radial-gradient(circle at center, rgba(139, 92, 246, 0.08) 0%, transparent 70%);
+            z-index: 1;
+            pointer-events: none;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @media (max-width: 480px) {
+            .lang-options {
+                flex-direction: column;
+                align-items: center;
+            }
+            .lang-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-glow"></div>
+    <div class="selector-container">
+        <img src="assets/img/RoftCore.png" alt="RoftCore Logo" class="logo-large">
+        <div class="welcome-text">
+            <h1>Welcome to <span class="text-gradient">RoftCore</span></h1>
+            <p>Select your preferred language</p>
+        </div>
+        <div class="lang-options">
+            <a href="en/" class="btn btn-primary lang-btn">English</a>
+            <a href="es/" class="btn btn-outline lang-btn">Español</a>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            const hasChosen = sessionStorage.getItem('lang_chosen');
+            if (!hasChosen) {
+                const userLang = navigator.language || navigator.userLanguage;
+                const target = userLang.startsWith('es') ? 'es/' : 'en/';
+                window.location.href = target;
+            }
+        })();
+
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                sessionStorage.setItem('lang_chosen', 'true');
+            });
+        });
+    </script>
+</body>
+</html>

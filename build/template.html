@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoftCore | The Core of Technological Innovation</title>
+    <link rel="icon" type="image/png" href="../assets/img/RoftCore.png">
+    <link rel="apple-touch-icon" href="../assets/img/RoftCore.png">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="../assets/img/RoftCore.png" alt="RoftCore Logo" class="logo-img">
+                <span class="logo-text"><span class="logo-accent">Roft</span>Core</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">{{nav_about}}</a></li>
+                <li><a href="#projects">{{nav_projects}}</a></li>
+                <li><a href="#philosophy">{{nav_philosophy}}</a></li>
+                <li><a href="#contact" class="btn btn-outline">{{nav_contact}}</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-background"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="badge">{{hero_badge}}</div>
+                <h1>{{hero_title}}</h1>
+                <p>{{hero_desc}}</p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">{{hero_btn_explore}}</a>
+                    <a href="#about" class="btn btn-ghost">{{hero_btn_more}}</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="section-grid">
+                <div class="section-text">
+                    <h2 class="section-title">{{about_title}}</h2>
+                    <p>{{about_desc}}</p>
+                    <div class="features">
+                        <div class="feature-item">
+                            <div class="feature-icon"><i data-lucide="shield"></i></div>
+                            <div>
+                                <h3>{{about_feature1_title}}</h3>
+                                <p>{{about_feature1_desc}}</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i data-lucide="zap"></i></div>
+                            <div>
+                                <h3>{{about_feature2_title}}</h3>
+                                <p>{{about_feature2_desc}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-visual">
+                    <div class="visual-card">
+                        <div class="visual-header">
+                            <div class="dot red"></div>
+                            <div class="dot yellow"></div>
+                            <div class="dot green"></div>
+                        </div>
+                        <div class="visual-body">
+                            <pre><code><span class="code-keyword">const</span> <span class="code-variable">RoftCore</span> = {
+  <span class="code-property">focus</span>: <span class="code-string">"Innovation"</span>,
+  <span class="code-property">state</span>: <span class="code-string">"Building"</span>,
+  <span class="code-property">projects</span>: [<span class="code-string">"NebWork"</span>, <span class="code-string">"NextGen"</span>]
+};</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ecosystem Section -->
+    <section id="ecosystem" class="section bg-darker">
+        <div class="container text-center">
+            <h2 class="section-title">{{ecosystem_title}}</h2>
+            <p class="section-subtitle">{{ecosystem_subtitle}}</p>
+            <div class="grid grid-4">
+                <div class="card">
+                    <i data-lucide="beaker"></i>
+                    <h3>{{ecosystem_card1_title}}</h3>
+                    <p>{{ecosystem_card1_desc}}</p>
+                </div>
+                <div class="card">
+                    <i data-lucide="layout"></i>
+                    <h3>{{ecosystem_card2_title}}</h3>
+                    <p>{{ecosystem_card2_desc}}</p>
+                </div>
+                <div class="card">
+                    <i data-lucide="code-2"></i>
+                    <h3>{{ecosystem_card3_title}}</h3>
+                    <p>{{ecosystem_card3_desc}}</p>
+                </div>
+                <div class="card">
+                    <i data-lucide="git-branch"></i>
+                    <h3>{{ecosystem_card4_title}}</h3>
+                    <p>{{ecosystem_card4_desc}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="nebwork-spotlight">
+                <div class="nebwork-info">
+                    <div class="badge-purple">{{nebwork_badge}}</div>
+                    <h2 class="nebwork-title">NebWork</h2>
+                    <p class="nebwork-desc">{{nebwork_desc}}</p>
+                    <ul class="nebwork-features">
+                        <li>{{nebwork_f1}}</li>
+                        <li>{{nebwork_f2}}</li>
+                        <li>{{nebwork_f3}}</li>
+                        <li>{{nebwork_f4}}</li>
+                        <li>{{nebwork_f5}}</li>
+                        <li>{{nebwork_f6}}</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">{{nebwork_btn}}</a>
+                </div>
+                <div class="nebwork-preview">
+                    <div class="nebwork-ui-mockup">
+                        <div class="ui-sidebar"></div>
+                        <div class="ui-main">
+                            <div class="ui-header"></div>
+                            <div class="ui-content">
+                                <div class="ui-task"></div>
+                                <div class="ui-task"></div>
+                                <div class="ui-task"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section id="philosophy" class="section bg-darker">
+        <div class="container">
+            <h2 class="section-title text-center">{{philosophy_title}}</h2>
+            <div class="grid grid-3">
+                <div class="philosophy-card">
+                    <h3>{{philosophy_card1_title}}</h3>
+                    <p>{{philosophy_card1_desc}}</p>
+                </div>
+                <div class="philosophy-card">
+                    <h3>{{philosophy_card2_title}}</h3>
+                    <p>{{philosophy_card2_desc}}</p>
+                </div>
+                <div class="philosophy-card">
+                    <h3>{{philosophy_card3_title}}</h3>
+                    <p>{{philosophy_card3_desc}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="../assets/img/RoftCore.png" alt="RoftCore Logo" class="logo-img">
+                        <span class="logo-text"><span class="logo-accent">Roft</span>Core</span>
+                    </div>
+                    <p>{{footer_brand}}</p>
+                </div>
+                <div class="footer-links">
+                    <h4>{{footer_eco}}</h4>
+                    <ul>
+                        <li><a href="#">NebWork</a></li>
+                        <li><a href="#">{{ecosystem_card4_title}}</a></li>
+                        <li><a href="#">Labs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>{{footer_legal}}</h4>
+                    <ul>
+                        <li><a href="#">{{footer_privacy}}</a></li>
+                        <li><a href="#">{{footer_terms}}</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>{{footer_rights}}</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Core Scripts -->
+    <script src="../assets/js/main.js" type="module"></script>
+    <script src="../assets/js/script.js"></script>
+
+</body>
+</html>

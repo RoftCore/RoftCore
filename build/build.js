@@ -21,7 +21,7 @@ function copyFolderRecursiveSync(source, target) {
     });
 }
 
-console.log('🚀 Iniciando build SEO-Friendly...');
+console.log(' Starting build.');
 
 if (fs.existsSync(distDir)) fs.rmSync(distDir, { recursive: true, force: true });
 fs.mkdirSync(distDir);
@@ -41,35 +41,28 @@ languages.forEach(lang => {
     
     let output = template;
     
-    // 1. Manejo de URLs Canónicas ANTES de inyectar el idioma en el resto
     const baseUrl = "https://roftcore.work";
     const canonical = lang === 'en' ? `${baseUrl}/` : `${baseUrl}/${lang}/`;
     
-    // Reemplazamos la URL base con la específica del idioma en el template
-    // Buscamos específicamente las etiquetas que tienen {{lang}} en la URL
     output = output.replace(/https:\/\/roftcore.work\/{{lang}}\//g, canonical);
 
-    // 2. Reemplazos de idioma y estado activo
     output = output.replace(/{{lang}}/g, lang);
     output = output.replace(/{{lang-en-active}}/g, lang === 'en' ? 'active' : '');
     output = output.replace(/{{lang-es-active}}/g, lang === 'es' ? 'active' : '');
 
-    // 3. Reemplazar llaves de traducción
     Object.keys(translations).forEach(key => {
         const regex = new RegExp(`{{${key}}}`, 'g');
         output = output.replace(regex, translations[key]);
     });
 
-    // Guardar versión en subdirectorio /en/ o /es/
-    if (!fs.existsSync(langOutputDir)) fs.mkdirSync(langOutputDir, { recursive: true });
-    fs.writeFileSync(path.join(langOutputDir, 'index.html'), output);
-    console.log(` ✅ Generado: /${lang}/index.html`);
-
-    // Si es inglés, también es la Home Principal en la raíz
     if (lang === 'en') {
         fs.writeFileSync(path.join(distDir, 'index.html'), output);
-        console.log(` 🏠 Generado Home Principal: /index.html (English)`);
+        console.log(`Principal page generated: /index.html (English)`);
+    } else {
+        if (!fs.existsSync(langOutputDir)) fs.mkdirSync(langOutputDir, { recursive: true });
+        fs.writeFileSync(path.join(langOutputDir, 'index.html'), output);
+        console.log(` Generated page: /${lang}/index.html`);
     }
 });
 
-console.log('\n✨ Build completa. Estructura SEO perfecta lista en /dist/');
+console.log('\n Build completed.');

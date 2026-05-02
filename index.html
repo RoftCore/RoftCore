@@ -1,137 +1,322 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{lang}}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Primary -->
-    <title>RoftCore | Forging the Digital Future from the Core</title>
-    <meta name="description" content="RoftCore is a disruptive technology lab dedicated to building scalable digital solutions, from experimental projects to advanced web applications.">
-    <meta name="keywords" content="RoftCore, Technology Lab, Digital Innovation, Web Development, Open Source, Scalable Software, NebWork">
-    <link rel="canonical" href="https://roftcore.work/">
+    <title>{{seo_title}}</title>
+    <meta name="description" content="{{seo_desc}}">
+    <link rel="canonical" href="https://roftcore.work/{{lang}}/">
     
-    <!-- Language Alternates (SEO) -->
+    <!-- Language Alternates -->
     <link rel="alternate" hreflang="x-default" href="https://roftcore.work/">
     <link rel="alternate" hreflang="en" href="https://roftcore.work/en/">
     <link rel="alternate" hreflang="es" href="https://roftcore.work/es/">
 
-    <!-- Social Media (Open Graph) -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://roftcore.work/">
-    <meta property="og:title" content="RoftCore | Technological Innovation Lab">
-    <meta property="og:description" content="Forging the digital future from the core. Explore our disruptive technological solutions and ecosystem.">
+    <meta property="og:url" content="https://roftcore.work/{{lang}}/">
+    <meta property="og:title" content="{{seo_title}}">
+    <meta property="og:description" content="{{seo_desc}}">
     <meta property="og:image" content="https://roftcore.work/assets/img/RoftCore.png">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="RoftCore | Forge the Digital Future">
-    <meta name="twitter:description" content="Disruptive technological solutions and scalable digital tools.">
+    <meta name="twitter:title" content="{{seo_title}}">
+    <meta name="twitter:description" content="{{seo_desc}}">
     <meta name="twitter:image" content="https://roftcore.work/assets/img/RoftCore.png">
 
-    <!-- Favicon & Styles -->
+    <!-- Assets -->
     <link rel="icon" type="image/png" href="assets/img/RoftCore.png">
+    <link rel="apple-touch-icon" href="assets/img/RoftCore.png">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            overflow: hidden;
-            background: radial-gradient(circle at center, #121212 0%, #0a0a0a 100%);
-        }
-        .selector-container {
-            text-align: center;
-            animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-            padding: 2rem;
-            z-index: 10;
-        }
-        .logo-large {
-            width: 80px;
-            height: auto;
-            margin-bottom: 2rem;
-            filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.3));
-        }
-        .welcome-text {
-            margin-bottom: 2.5rem;
-        }
-        .welcome-text h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-        .welcome-text p {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-        }
-        .lang-options {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-        }
-        .lang-btn {
-            min-width: 160px;
-            justify-content: center;
-        }
-        .background-glow {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100vw;
-            height: 100vh;
-            background: radial-gradient(circle at center, rgba(139, 92, 246, 0.08) 0%, transparent 70%);
-            z-index: 1;
-            pointer-events: none;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @media (max-width: 480px) {
-            .lang-options {
-                flex-direction: column;
-                align-items: center;
-            }
-            .lang-btn {
-                width: 100%;
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "RoftCore",
+      "alternateName": "Roft Core",
+      "url": "https://roftcore.work",
+      "description": "Digital innovation entity building open-source and commercial projects to solve real problems.",
+      "slogan": "Forge the Digital Future from the Core",
+      "knowsAbout": ["Open Source", "Software Development", "Collaborative Platforms", "Web Applications"]
+    }
+    </script>
 </head>
 <body>
-    <div class="background-glow"></div>
-    <div class="selector-container">
-        <img src="assets/img/RoftCore.png" alt="RoftCore Logo" class="logo-large">
-        <div class="welcome-text">
-            <h1>Welcome to <span class="text-gradient">RoftCore</span></h1>
-            <p>Select your preferred language / Selecciona tu idioma</p>
-        </div>
-        <div class="lang-options">
-            <a href="en/" class="btn btn-primary lang-btn" title="English Version">English</a>
-            <a href="es/" class="btn btn-outline lang-btn" title="Versión en Español">Español</a>
-        </div>
-    </div>
 
-    <script>
-        (function() {
-            const hasChosen = sessionStorage.getItem('lang_chosen');
-            if (!hasChosen) {
-                const userLang = navigator.language || navigator.userLanguage;
-                const target = userLang.startsWith('es') ? 'es/' : 'en/';
-                window.location.href = target;
-            }
-        })();
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="assets/img/RoftCore.png" alt="RoftCore Logo" class="logo-img">
+                <span class="logo-text"><span class="logo-accent">Roft</span>Core</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">{{nav_about}}</a></li>
+                <li><a href="#projects">{{nav_projects}}</a></li>
+                <li><a href="#philosophy">{{nav_philosophy}}</a></li>
+                <li><a href="#contact" class="btn btn-outline">{{nav_contact}}</a></li>
+            </ul>
+        </div>
+    </nav>
 
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                sessionStorage.setItem('lang_chosen', 'true');
-            });
-        });
-    </script>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-background"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="badge">{{hero_badge}}</div>
+                <h1>{{hero_title}}</h1>
+                <p>{{hero_desc}}</p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">{{hero_btn_explore}}</a>
+                    <a href="#about" class="btn btn-ghost">{{hero_btn_more}}</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="section-grid">
+                <div class="section-text">
+                    <h2 class="section-title">{{about_title}}</h2>
+                    <p>{{about_desc}}</p>
+                    <div class="features">
+                        <div class="feature-item">
+                            <div class="feature-icon"><i data-lucide="shield"></i></div>
+                            <div>
+                                <h3>{{about_feature1_title}}</h3>
+                                <p>{{about_feature1_desc}}</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i data-lucide="zap"></i></div>
+                            <div>
+                                <h3>{{about_feature2_title}}</h3>
+                                <p>{{about_feature2_desc}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-visual">
+                    <div class="visual-card">
+                        <div class="visual-header">
+                            <button class="dot red"></button>
+                            <button class="dot yellow"></button>
+                            <button class="dot green"></button>
+                        </div>
+                        <div class="visual-body">
+                            <pre><code><span class="code-keyword">const</span> <span class="code-variable">RoftCore</span> = {
+  <span class="code-property">focus</span>: <span class="code-string">"Innovation"</span>,
+  <span class="code-property">state</span>: <span class="code-string">"Building"</span>,
+  <span class="code-property">projects</span>: [<span class="code-string">"NebWork"</span>, <span class="code-string">"NextGen"</span>]
+};</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ecosystem Section -->
+    <section id="ecosystem" class="section bg-darker">
+        <div class="container text-center">
+            <h2 class="section-title">{{ecosystem_title}}</h2>
+            <p class="section-subtitle">{{ecosystem_subtitle}}</p>
+            <div class="grid grid-4">
+                <div class="card">
+                    <i data-lucide="beaker"></i>
+                    <h3>{{ecosystem_card1_title}}</h3>
+                    <p>{{ecosystem_card1_desc}}</p>
+                </div>
+                <div class="card">
+                    <i data-lucide="layout"></i>
+                    <h3>{{ecosystem_card2_title}}</h3>
+                    <p>{{ecosystem_card2_desc}}</p>
+                </div>
+                <div class="card">
+                    <i data-lucide="code-2"></i>
+                    <h3>{{ecosystem_card3_title}}</h3>
+                    <p>{{ecosystem_card3_desc}}</p>
+                </div>
+                <div class="card">
+                    <i data-lucide="git-branch"></i>
+                    <h3>{{ecosystem_card4_title}}</h3>
+                    <p>{{ecosystem_card4_desc}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="nebwork-spotlight">
+                <div class="nebwork-info">
+                    <div class="badge-purple">{{nebwork_badge}}</div>
+                    <button class="nebwork-title">NebWork</button>
+                    <p class="nebwork-desc">{{nebwork_desc}}</p>
+                    <ul class="nebwork-features">
+                        <li>{{nebwork_f1}}</li>
+                        <li>{{nebwork_f2}}</li>
+                        <li>{{nebwork_f3}}</li>
+                        <li>{{nebwork_f4}}</li>
+                        <li>{{nebwork_f5}}</li>
+                        <li>{{nebwork_f6}}</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">{{nebwork_btn}}</a>
+                </div>
+                <div class="nebwork-preview">
+                    <div class="nebwork-ui-mockup">
+                        <div class="ui-sidebar">
+                            <div class="ui-back-button"></div>
+                            <div class="ui-sidebar-stack">
+                                <span class="ui-side-pill is-active">{{nebwork_preview_side_ideas}}</span>
+                                <span class="ui-side-pill">{{nebwork_preview_side_hub}}</span>
+                                <span class="ui-side-pill">{{nebwork_preview_side_mockups}}</span>
+                                <span class="ui-side-pill">{{nebwork_preview_side_roadmap}}</span>
+                            </div>
+                        </div>
+                        <div class="ui-main">
+                            <div class="ui-topbar">
+                                <div class="ui-brand-block">
+                                    <span class="ui-kicker">{{nebwork_preview_kicker}}</span>
+                                    <div class="ui-title-row">
+                                        <h3>NebWork</h3>
+                                        <span class="ui-lock-pill">E2EE</span>
+                                    </div>
+                                </div>
+                                <div class="ui-search-card">
+                                    <span class="ui-search-title">{{nebwork_preview_search_title}}</span>
+                                    <div class="ui-search-input">{{nebwork_preview_search_placeholder}}</div>
+                                </div>
+                            </div>
+                            <div class="ui-hero-card">
+                                <div class="ui-hero-copy">
+                                    <span class="ui-hero-tag">{{nebwork_preview_hero_tag}}</span>
+                                    <h4>{{nebwork_preview_hero_title}}</h4>
+                                    <p>{{nebwork_preview_hero_desc}}</p>
+                                    <div class="ui-chip-row">
+                                        <span class="ui-chip is-warm">{{nebwork_preview_chip_projects}}</span>
+                                        <span class="ui-chip">{{nebwork_preview_chip_invite}}</span>
+                                        <span class="ui-chip">{{nebwork_preview_chip_canvas}}</span>
+                                    </div>
+                                </div>
+                                <div class="ui-badge-cluster">
+                                    <span class="ui-outline-pill">{{nebwork_preview_badge_roles}}</span>
+                                    <span class="ui-outline-pill">{{nebwork_preview_badge_messages}}</span>
+                                    <span class="ui-outline-pill">{{nebwork_preview_badge_notifications}}</span>
+                                </div>
+                            </div>
+                            <div class="ui-content">
+                                <div class="ui-board-shell">
+                                    <div class="ui-board-header">
+                                        <div>
+                                            <span class="ui-board-kicker">{{nebwork_preview_board_kicker}}</span>
+                                            <h5>{{nebwork_preview_board_title}}</h5>
+                                        </div>
+                                        <span class="ui-chip is-warm">{{nebwork_preview_board_btn}}</span>
+                                    </div>
+                                    <div class="ui-board-grid">
+                                        <article class="ui-card idea-card">
+                                            <span class="ui-card-status">{{nebwork_preview_card_idea_status}}</span>
+                                            <strong>{{nebwork_preview_card_idea_title}}</strong>
+                                            <p>{{nebwork_preview_card_idea_desc}}</p>
+                                            <div class="ui-card-dots">
+                                                <span></span><span></span><span></span>
+                                            </div>
+                                        </article>
+                                        <article class="ui-card hub-card">
+                                            <span class="ui-card-status is-cyan">{{nebwork_preview_card_hub_status}}</span>
+                                            <strong>{{nebwork_preview_card_hub_title}}</strong>
+                                            <p>{{nebwork_preview_card_hub_desc}}</p>
+                                        </article>
+                                        <article class="ui-card vote-card">
+                                            <span class="ui-card-status is-gold">{{nebwork_preview_card_vote_status}}</span>
+                                            <strong>{{nebwork_preview_card_vote_title}}</strong>
+                                            <div class="ui-vote-bars">
+                                                <span style="--w: 82%"></span>
+                                                <span style="--w: 61%"></span>
+                                                <span style="--w: 43%"></span>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section id="philosophy" class="section bg-darker">
+        <div class="container">
+            <h2 class="section-title text-center">{{philosophy_title}}</h2>
+            <div class="grid grid-3">
+                <div class="philosophy-card">
+                    <h3>{{philosophy_card1_title}}</h3>
+                    <p>{{philosophy_card1_desc}}</p>
+                </div>
+                <div class="philosophy-card">
+                    <h3>{{philosophy_card2_title}}</h3>
+                    <p>{{philosophy_card2_desc}}</p>
+                </div>
+                <div class="philosophy-card">
+                    <h3>{{philosophy_card3_title}}</h3>
+                    <p>{{philosophy_card3_desc}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="assets/img/RoftCore.png" alt="RoftCore Logo" class="logo-img">
+                        <span class="logo-text"><span class="logo-accent">Roft</span>Core</span>
+                    </div>
+                    <p>{{footer_brand}}</p>
+                </div>
+                <div class="footer-links">
+                    <h4>{{footer_eco}}</h4>
+                    <ul>
+                        <li><a href="#">NebWork</a></li>
+                        <li><a href="#">{{ecosystem_card4_title}}</a></li>
+                        <li><a href="#">Labs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>{{footer_legal}}</h4>
+                    <ul>
+                        <li><a href="#">{{footer_privacy}}</a></li>
+                        <li><a href="#">{{footer_terms}}</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>{{footer_rights}}</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Core Scripts -->
+    <script src="assets/js/main.js" type="module"></script>
+    <script src="assets/js/functions.js" type="module"></script>
+    <script src="dev-tools.js" type="module"></script>
 </body>
 </html>

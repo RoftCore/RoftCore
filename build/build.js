@@ -5,7 +5,7 @@ const rootDir = path.join(__dirname, '..');
 const distDir = path.join(rootDir, 'dist');
 const i18nDir = path.join(rootDir, 'i18n');
 const assetsDir = path.join(rootDir, 'assets');
-const templatePath = path.join(__dirname, 'template.html');
+const templatePath = path.join(rootDir, 'index.html');
 
 function copyFolderRecursiveSync(source, target) {
     if (!fs.existsSync(target)) fs.mkdirSync(target, { recursive: true });
@@ -41,6 +41,13 @@ languages.forEach(lang => {
     
     let output = template;
     
+    // Adjust paths for subdirectories (e.g., /es/index.html)
+    if (lang !== 'en') {
+        output = output.replace(/href="assets\//g, 'href="../assets/');
+        output = output.replace(/src="assets\//g, 'src="../assets/');
+        output = output.replace(/src="dev-tools\.js"/g, 'src="../dev-tools.js"');
+    }
+
     const baseUrl = "https://roftcore.work";
     const canonical = lang === 'en' ? `${baseUrl}/` : `${baseUrl}/${lang}/`;
     

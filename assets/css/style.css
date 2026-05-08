@@ -406,6 +406,208 @@ ul {
     font-size: 0.95rem;
 }
 
+/* TorkTool Pitch */
+.torktool-pitch {
+    position: relative;
+    overflow: hidden;
+}
+
+.pitch-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+.badge-accent {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background: rgba(109, 40, 217, 0.1);
+    border: 1px solid rgba(109, 40, 217, 0.2);
+    border-radius: 100px;
+    color: var(--accent-color);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.section-subtitle-left {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    max-width: 500px;
+    margin-bottom: 2.5rem;
+}
+
+.pitch-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+.benefit-item i {
+    color: var(--accent-color);
+    width: 24px;
+    height: 24px;
+}
+
+.pitch-trust {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.trust-item i {
+    color: var(--rf-emerald-green);
+    width: 16px;
+    height: 16px;
+}
+
+.pitch-actions {
+    display: flex;
+    gap: 1.5rem;
+}
+
+/* TorkTool Mockup */
+.torktool-mockup {
+    background: #121212;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 420px;
+    position: relative;
+}
+
+.mockup-header {
+    background: #1a1a1a;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mockup-search {
+    background: #0a0a0a;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.mockup-body {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+.mockup-sidebar {
+    width: 60px;
+    background: #161616;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 0;
+    gap: 1.5rem;
+}
+
+.mockup-nav-item {
+    color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+
+.mockup-nav-item.active {
+    color: var(--accent-color);
+}
+
+.mockup-content {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.mockup-tool-card {
+    background: #1a1a1a;
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tool-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.tool-header i {
+    color: #ef4444; /* YouTube red */
+}
+
+.tool-input-mock {
+    height: 36px;
+    background: #0a0a0a;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.tool-btn-mock {
+    height: 36px;
+    background: var(--accent-color);
+    border-radius: 8px;
+    width: 100px;
+}
+
+.mockup-recent {
+    display: flex;
+    gap: 1rem;
+}
+
+.recent-item-mock {
+    flex: 1;
+    height: 80px;
+    background: #1a1a1a;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mockup-agent-bar {
+    background: var(--accent-color);
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: white;
+}
+
 /* NebWork Spotlight */
 .nebwork-spotlight {
     display: grid;
@@ -942,8 +1144,10 @@ ul {
 /* Responsive */
 @media (max-width: 1024px) {
     .hero h1 { font-size: 3rem; }
-    .section-grid, .nebwork-spotlight { grid-template-columns: 1fr; }
+    .section-grid, .nebwork-spotlight, .pitch-grid { grid-template-columns: 1fr; }
     .nebwork-preview { height: 340px; }
+    .pitch-grid { gap: 3rem; }
+    .torktool-mockup { height: 360px; }
     .ui-topbar,
     .ui-board-grid { grid-template-columns: 1fr; }
     .ui-badge-cluster { max-width: none; justify-content: flex-start; }
@@ -956,6 +1160,8 @@ ul {
     .hero-actions { flex-direction: column; }
     .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
     .nebwork-spotlight { padding: 2rem; }
+    .pitch-trust { flex-direction: column; gap: 1rem; }
+    .pitch-actions { flex-direction: column; }
     .nebwork-ui-mockup {
         flex-direction: column;
         padding: 0.85rem;

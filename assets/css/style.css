@@ -494,9 +494,17 @@ ul {
     box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
     overflow: hidden;
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
-    height: 420px;
     position: relative;
+}
+
+.mockup-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 16px;
 }
 
 .mockup-header {
@@ -958,6 +966,8 @@ ul {
     border: 1px solid rgba(255,255,255,0.14);
     color: rgba(255,255,255,0.78);
 }
+
+
 
 .ui-content {
     flex: 1;
